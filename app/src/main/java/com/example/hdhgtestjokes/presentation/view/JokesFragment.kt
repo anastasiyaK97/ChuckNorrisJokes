@@ -14,6 +14,8 @@ import com.example.hdhgtestjokes.data.api.InternetConnectionCheckable
 import com.example.hdhgtestjokes.databinding.JokesFragmentBinding
 import com.example.hdhgtestjokes.domain.Joke
 import com.example.hdhgtestjokes.presentation.viewmodel.JokesViewModel
+import com.example.hdhgtestjokes.presentation.viewmodel.ViewModelFactory
+import org.koin.android.ext.android.inject
 
 class JokesFragment : Fragment(), InternetConnectionCheckable {
 
@@ -35,7 +37,7 @@ class JokesFragment : Fragment(), InternetConnectionCheckable {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val viewModelFactory = AndroidApplication.instance.viewModelFactory
+        val viewModelFactory: ViewModelFactory by inject()
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(JokesViewModel::class.java)
         binding.reloadButton.setOnClickListener {
             if (isInternetAvailable()) {
