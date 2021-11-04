@@ -7,9 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface JokeApiService {
-    @GET("count")
-    fun getTotalCount(): Single<JSCountData>
-
+   
     @GET("jokes/random/{number}")
     fun getSomeJokes(
         @Path("number") num: Int?
