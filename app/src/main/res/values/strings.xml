@@ -7,4 +7,5 @@
     <string name="web">Web</string>
     <string name="no_internet_found_text">No internet found. \nCheck your connection or try again</string>
     <string name="try_again">Try Again</string>
+    <string name="api_info">Api Info</string>
 </resources>

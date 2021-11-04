@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hdhgtestjokes.AndroidApplication
 import com.example.hdhgtestjokes.MainActivity
+import com.example.hdhgtestjokes.R
 import com.example.hdhgtestjokes.data.api.InternetConnectionCheckable
 import com.example.hdhgtestjokes.databinding.JokesFragmentBinding
 import com.example.hdhgtestjokes.domain.Joke
+import com.example.hdhgtestjokes.presentation.extensions.setActivityTitle
 import com.example.hdhgtestjokes.presentation.viewmodel.JokesViewModel
 import com.example.hdhgtestjokes.presentation.viewmodel.ViewModelFactory
 import org.koin.android.ext.android.inject
@@ -61,6 +63,11 @@ class JokesFragment : Fragment(), InternetConnectionCheckable {
             recyclerAdapter.setData(it)
         })
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setActivityTitle(R.string.app_name)
     }
 
     private fun initRecyclerView(jokesList: RecyclerView) {

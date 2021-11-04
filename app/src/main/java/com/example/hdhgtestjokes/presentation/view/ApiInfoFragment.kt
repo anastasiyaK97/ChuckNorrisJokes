@@ -9,8 +9,10 @@ import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.hdhgtestjokes.MainActivity
+import com.example.hdhgtestjokes.R
 import com.example.hdhgtestjokes.data.api.InternetConnectionCheckable
 import com.example.hdhgtestjokes.databinding.ApiInfoFragmentBinding
+import com.example.hdhgtestjokes.presentation.extensions.setActivityTitle
 import com.example.hdhgtestjokes.presentation.viewmodel.ApiInfoViewModel
 
 
@@ -50,6 +52,11 @@ class ApiInfoFragment : Fragment(), InternetConnectionCheckable {
                 }
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setActivityTitle(R.string.api_info)
     }
 
     fun canGoBack(): Boolean {
