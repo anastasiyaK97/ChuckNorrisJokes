@@ -1,6 +1,5 @@
 package com.example.hdhgtestjokes.data.api
 
-import com.example.hdhgtestjokes.data.entities.JSCountData
 import com.example.hdhgtestjokes.data.entities.JSData
 import io.reactivex.Single
 import retrofit2.http.GET
